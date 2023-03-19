@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="product" class="edu.tdtu.Product" />
+    <bean id="product1" class="edu.tdtu.Product" scope="prototype">
+        <property name="id" value="1" />
+        <property name="name" value="Iphone" />
+        <property name="price" value="10000.0" />
+        <property name="description" value="SmartPhone" />
+    </bean>
+    <bean id="product2" class="edu.tdtu.Product" scope="prototype">
+        <constructor-arg ref="product1" />
+    </bean>
+    <bean id="product3" class="edu.tdtu.Product" scope="singleton">
+        <property name="id" value="3" />
+        <property name="name" value="Xbox" />
+        <property name="price" value="550.0" />
+        <property name="description" value="Handle" />
+    </bean>
+</beans>
